@@ -1,0 +1,25 @@
+{
+    "name": "sosi-syntax-highlighter",
+    "displayName": "SOSI syntax highlighter",
+    "description": "Highlights keywords and data types in SOSI files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sosi",
+            "aliases": ["SOSI", "sosi"],
+            "extensions": [".SOS", ".sos"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sosi",
+            "scopeName": "source.sosi",
+            "path": "./syntaxes/sosi.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,56 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SOSI",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"entities": {
+			"patterns": [{
+				"name": "entity.name.tag.sosi",
+				"match": "(?<=^\\.)[^\\.]*(?=:$)"
+			},{
+				"name": "entity.other.attribute-name.sosi",
+				"match": "(?<=\\.\\.)[^\\s\\.]+"
+			}]
+		},
+		"values": {
+			"patterns": [{
+				"name": "constant.numeric.sosi",
+				"match": "\\b(D)?\\d+(\\.\\d+)?\\b"
+			},{
+				"name": "string.quoted.double.sosi",
+				"match": "(?<=\\s)[^\\.\"][^\\s\"]+"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.sosi",
+				"match": "\\b(HODE|SLUTT|DEF)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.sosi",
+			"begin": "(?<=\").",
+			"end": ".(?=\")",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sosi",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.sosi"
+}
